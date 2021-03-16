@@ -44,7 +44,7 @@ class MainViewController: UIViewController {
     private func makeConstraints() {
         topStackView.snp.makeConstraints { make in
             make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(380)
+            make.height.equalTo(382)
         }
         
         bottomStackView.snp.makeConstraints { make in
