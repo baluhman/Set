@@ -10,26 +10,26 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    private lazy var topStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.backgroundColor = .gray
-       return stackView
+    private lazy var topContainerView: CardsContainerView = {
+        let view = CardsContainerView()
+        view.backgroundColor = .green
+        return view
     }()
     
-    private lazy var bottomStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.backgroundColor = .green
-       return stackView
+    private lazy var bottomContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .yellow
+        return view
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
+}
+
+// UI
+extension MainViewController {
     
     private func setupViews() {
         addSubviews()
@@ -37,18 +37,18 @@ class MainViewController: UIViewController {
     }
     
     private func addSubviews() {
-        view.addSubview(topStackView)
-        view.addSubview(bottomStackView)
+        view.addSubview(topContainerView)
+        view.addSubview(bottomContainerView)
     }
     
     private func makeConstraints() {
-        topStackView.snp.makeConstraints { make in
+        topContainerView.snp.makeConstraints { make in
             make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(382)
+            make.height.equalTo(582)
         }
         
-        bottomStackView.snp.makeConstraints { make in
-            make.top.equalTo(topStackView.snp.bottom).offset(20)
+        bottomContainerView.snp.makeConstraints { make in
+            make.top.equalTo(topContainerView.snp.bottom).offset(20)
             make.bottom.left.right.equalTo(view.safeAreaLayoutGuide)
         }
     }
