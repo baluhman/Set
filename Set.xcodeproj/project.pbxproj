@@ -101,6 +101,7 @@
 		276AA9D825FFE2B30045C66A /* Set */ = {
 			isa = PBXGroup;
 			children = (
+				27A330EF261595CA00D8C361 /* Model */,
 				27A330E426158B2B00D8C361 /* Views */,
 				276AAA20260064C10045C66A /* SupportingFiles */,
 				276AA9E725FFE2B30045C66A /* Info.plist */,
@@ -144,6 +145,13 @@
 				27A330EA2615922400D8C361 /* CardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		27A330EF261595CA00D8C361 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
