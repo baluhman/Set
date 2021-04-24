@@ -29,6 +29,7 @@ class CardsContainerView: UIView {
     
     // MARK: - API
     func setNumberOfRows(_ number: Int) {
+        // TODO: - привести в порядок метод
         for rows in 1...number {
             let cardsRowsView = UIStackView()
             cardsRowsView.axis = .horizontal
