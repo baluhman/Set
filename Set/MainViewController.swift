@@ -15,6 +15,7 @@ private struct Constant {
     let bottomContainerViewTopOffset: CGFloat = 20
     // TODO: потом убрать когда появится слой бизнес-логики (Model)
     let maxNumberTopContainerRows = 8
+    let maxCardInRow = 3
 }
 
 class MainViewController: UIViewController {
@@ -73,6 +74,6 @@ extension MainViewController {
 extension MainViewController {
     // TODO: - возможно потом поменять механизм с помощью бизнес-логики
     private func setGameUI() {
-        topContainerView.setNumberOfRows(constant.maxNumberTopContainerRows)
+        topContainerView.configureWith(rowsCount: constant.maxNumberTopContainerRows, maxCardViewsCountInRow: constant.maxCardInRow)
     }
 }

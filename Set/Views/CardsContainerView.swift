@@ -28,24 +28,12 @@ class CardsContainerView: UIView {
     }
     
     // MARK: - API
-    func setNumberOfRows(_ number: Int) {
-        // TODO: - привести в порядок метод
-        for rows in 1...number {
-            let cardsRowsView = UIStackView()
-            cardsRowsView.axis = .horizontal
-            cardsRowsView.distribution = .fillEqually
-            cardsRowsView.spacing = 10
-            
-            for i in 1...3 {
-                let cardView = UIButton()
-                cardView.backgroundColor = .cyan
-                cardsRowsView.addArrangedSubview(cardView)
-                print("\(i)")
-            }
-            
-            cardsRowsView.backgroundColor = .blue
-            print("\(rows)")
-            contentStackView.addArrangedSubview(cardsRowsView)
+    func configureWith(rowsCount: Int, maxCardViewsCountInRow: Int) {
+        for _ in 1...rowsCount {
+            let rowsStackView = UIStackView()
+            configureRowsStackView(rowsStackView)
+            addCardViews(rowsCount: maxCardViewsCountInRow, to: rowsStackView)
+            contentStackView.addArrangedSubview(rowsStackView)
         }
     }
 }
@@ -73,5 +61,18 @@ private extension CardsContainerView {
         }
     }
     
+    func configureRowsStackView(_ view: UIStackView) {
+        view.axis = .horizontal
+        view.distribution = .fillEqually
+        view.spacing = 10
+        view.backgroundColor = .blue
+    }
     
+    func addCardViews(rowsCount: Int, to view: UIStackView) {
+        for _ in 1...rowsCount {
+            let cardButton = UIButton()
+            cardButton.backgroundColor = .cyan
+            view.addArrangedSubview(cardButton)
+        }
+    }
 }
