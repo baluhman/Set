@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
     // MARK: - Subviews
     private lazy var topContainerView: CardsContainerView = {
         let view = CardsContainerView()
-        view.backgroundColor = constant.topContainerViewBackgroundColor
         return view
     }()
     

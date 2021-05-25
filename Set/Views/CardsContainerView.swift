@@ -43,7 +43,6 @@ private extension CardsContainerView {
     
     func setupViews() {
         addSubviews()
-        setAppearance()
         makeConstaraints()
     }
     
@@ -65,13 +64,13 @@ private extension CardsContainerView {
         view.axis = .horizontal
         view.distribution = .fillEqually
         view.spacing = 10
-        view.backgroundColor = .blue
     }
     
     func addCardViews(rowsCount: Int, to view: UIStackView) {
         for _ in 1...rowsCount {
             let cardButton = UIButton()
-            cardButton.backgroundColor = .cyan
+            cardButton.backgroundColor = .lightGray
+            cardButton.layer.cornerRadius = 10
             view.addArrangedSubview(cardButton)
         }
     }
